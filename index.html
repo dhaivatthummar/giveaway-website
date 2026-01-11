@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Win Amazon Gift Voucher - Free Giveaway Contest">
+    <meta name="keywords" content="amazon gift voucher, giveaway, contest, free, win">
+    <meta name="author" content="Giveaway Central">
+    <meta property="og:title" content="₹1000 Amazon Gift Voucher Giveaway">
+    <meta property="og:description" content="Win a ₹1000 Amazon Gift Voucher absolutely FREE!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/FF9900/FFFFFF?text=Amazon+Gift+Voucher">
+    <title>₹1000 Amazon Gift Voucher Giveaway - Win Now!</title>
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 10px;
+            background: #fff;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 20px 15px;
+            background: linear-gradient(135deg, #FF9900, #FF6600);
+            color: white;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        /* Top Banner Ad */
+        .ad-banner {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            margin: 15px 0;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .ad-label {
+            font-size: 10px;
+            color: #999;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* Gift Voucher Visual */
+        .voucher-visual {
+            text-align: center;
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+            border-radius: 15px;
+            margin: 20px 15px;
+            border: 2px dashed #FF9900;
+        }
+
+        .voucher-icon {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .voucher-amount {
+            font-size: 32px;
+            font-weight: bold;
+            color: #FF6600;
+            margin-bottom: 10px;
+        }
+
+        .voucher-text {
+            font-size: 18px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Form Styles */
+        .form-container {
+            padding: 20px 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background: #fff;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF9900;
+            box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.1);
+        }
+
+        .form-group input:valid {
+            border-color: #28a745;
+        }
+
+        /* Mid Content Ad */
+        .ad-mid {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 15px;
+            color: #6c757d;
+        }
+
+        /* Buttons */
+        .btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 15px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .btn-confirm {
+            background: linear-gradient(135deg, #FF6600, #FF9900);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 102, 0, 0.3);
+        }
+
+        .btn-confirm:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 102, 0, 0.4);
+        }
+
+        .btn-confirm:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Success Message */
+        .success-message {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            border: 2px solid #28a745;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 15px;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .success-icon {
+            font-size: 48px;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .success-text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #155724;
+            margin-bottom: 10px;
+        }
+
+        .success-subtext {
+            font-size: 14px;
+            color: #155724;
+            opacity: 0.8;
+        }
+
+        /* Steps Indicator */
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 15px;
+            padding: 15px 0;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #e9ecef;
+            color: #6c757d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .step.active .step-number {
+            background: #FF9900;
+            color: white;
+        }
+
+        .step.completed .step-number {
+            background: #28a745;
+            color: white;
+        }
+
+        .step-text {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .step.active .step-text {
+            color: #FF9900;
+            font-weight: 600;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            background: #f8f9fa;
+            border-left: 4px solid #FF9900;
+            padding: 15px;
+            margin: 20px 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .disclaimer h4 {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .disclaimer p {
+            font-size: 12px;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: #343a40;
+            color: #fff;
+            padding: 20px 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #FF9900;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        /* Bottom Sticky Ad (Mobile) */
+        .ad-sticky {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border-top: 1px solid #e9ecef;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        }
+
+        .ad-sticky-content {
+            background: #f8f9fa;
+            border-radius: 6px;
+            padding: 8px;
+            color: #6c757d;
+            font-size: 12px;
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 600px;
+                margin: 20px auto;
+                border-radius: 20px;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            }
+
+            .ad-sticky {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .voucher-amount {
+                font-size: 40px;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* High contrast mode */
+        @media (prefers-contrast: high) {
+            .btn {
+                border: 2px solid currentColor;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 id="giveaway-title">Loading...</h1>
+            <p id="giveaway-description">Loading...</p>
+        </div>
+
+        <!-- Top Banner Ad -->
+        <div class="ad-banner">
+            <div class="ad-label">Advertisement</div>
+            <div style="height: 60px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999;">
+                728x90 Banner Ad Space
+            </div>
+        </div>
+
+        <!-- Steps Indicator -->
+        <div class="steps">
+            <div class="step active" id="step-1">
+                <div class="step-number">1</div>
+                <div class="step-text">Fill Details</div>
+            </div>
+            <div class="step" id="step-2">
+                <div class="step-number">2</div>
+                <div class="step-text">Share WhatsApp</div>
+            </div>
+            <div class="step" id="step-3">
+                <div class="step-number">3</div>
+                <div class="step-text">Confirm Entry</div>
+            </div>
+        </div>
+
+        <!-- Gift Voucher Visual -->
+        <div class="voucher-visual">
+            <div class="voucher-icon">🎁</div>
+            <div class="voucher-amount">₹1000</div>
+            <div class="voucher-text">Amazon Gift Voucher</div>
+        </div>
+
+        <!-- Entry Form -->
+        <div class="form-container">
+            <form id="giveaway-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Number *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter your mobile number" pattern="[0-9]{10}">
+                </div>
+            </form>
+        </div>
+
+        <!-- Mid Content Ad -->
+        <div class="ad-mid">
+            <div class="ad-label">Sponsored</div>
+            <div style="height: 100px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; margin-top: 10px;">
+                300x250 Rectangle Ad Space
+            </div>
+        </div>
+
+        <!-- WhatsApp Share Button -->
+        <div style="padding: 0 15px;">
+            <button class="btn btn-whatsapp" id="whatsapp-btn" disabled>
+                📱 Share on WhatsApp (<span id="share-count">0</span>/10 Friends)
+            </button>
+            <div id="share-progress" style="margin-top: 10px; display: none;">
+                <div style="background: #e9ecef; border-radius: 10px; height: 8px; overflow: hidden;">
+                    <div id="progress-bar" style="background: linear-gradient(135deg, #25D366, #128C7E); height: 100%; width: 0%; transition: width 0.3s ease;"></div>
+                </div>
+                <p style="text-align: center; margin-top: 8px; font-size: 14px; color: #666;">
+                    <span id="remaining-shares">10</span> more shares needed
+                </p>
+            </div>
+        </div>
+
+        <!-- Confirm Entry Button -->
+        <div style="padding: 0 15px;">
+            <button class="btn btn-confirm" id="confirm-btn" disabled>
+                ✅ Confirm Entry
+            </button>
+        </div>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message">
+            <div class="success-icon">✅</div>
+            <div class="success-text">Entry Confirmed Successfully!</div>
+            <div class="success-subtext">You're now participating in the giveaway. Winners will be announced soon!</div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <h4>Important Disclaimer</h4>
+            <p>This giveaway is not affiliated with WhatsApp, Amazon, or Meta. Winners will be selected randomly. By participating, you agree to our terms and conditions.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms & Conditions</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer-text">
+                © 2024 Giveaway Central. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Sticky Ad (Mobile Only) -->
+    <div class="ad-sticky">
+        <div class="ad-sticky-content">
+            <div class="ad-label">Advertisement</div>
+            320x50 Mobile Banner Ad
+        </div>
+    </div>
+
+    <script>
+        // Giveaway Configuration - Change this to update giveaway details
+        const GIVEAWAY_CONFIG = {
+            giveaway_id: "amazon-1000-jan",
+            giveaway_title: "₹1000 Amazon Gift Voucher",
+            giveaway_description: "Win a ₹1000 Amazon Gift Voucher absolutely FREE!",
+            share_text: "🎁 I am participating in a ₹1000 Amazon Gift Voucher Giveaway! Join now 👇"
+        };
+
+        // Supabase Configuration (Replace with your actual credentials)
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL';
+        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+
+        // Application State
+        let formData = {};
+        let shareCount = 0;
+        const REQUIRED_SHARES = 10;
+
+        // DOM Elements
+        const form = document.getElementById('giveaway-form');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const confirmBtn = document.getElementById('confirm-btn');
+        const successMessage = document.getElementById('success-message');
+
+        // Initialize Supabase Client (Mock for demo)
+        const supabase = {
+            from: (table) => ({
+                insert: (data) => {
+                    console.log('Inserting data to Supabase:', data);
+                    // Simulate API call
+                    return new Promise((resolve) => {
+                        setTimeout(() => {
+                            resolve({ data: data, error: null });
+                        }, 1000);
+                    });
+                }
+            })
+        };
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeGiveaway();
+            setupEventListeners();
+            validateForm();
+        });
+
+        // Initialize giveaway with config data
+        function initializeGiveaway() {
+            document.getElementById('giveaway-title').textContent = GIVEAWAY_CONFIG.giveaway_title;
+            document.getElementById('giveaway-description').textContent = GIVEAWAY_CONFIG.giveaway_description;
+            document.title = `${GIVEAWAY_CONFIG.giveaway_title} - Win Now!`;
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Form validation
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', validateForm);
+                input.addEventListener('blur', validateForm);
+            });
+
+            // WhatsApp share button
+            whatsappBtn.addEventListener('click', handleWhatsAppShare);
+
+            // Confirm entry button
+            confirmBtn.addEventListener('click', handleConfirmEntry);
+
+            // Form submission prevention
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+            });
+        }
+
+        // Validate form and update button states
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            const isValidName = name.length >= 2;
+            const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const isValidPhone = /^[0-9]{10}$/.test(phone);
+
+            const isFormValid = isValidName && isValidEmail && isValidPhone;
+
+            // Update form data
+            if (isFormValid) {
+                formData = {
+                    giveaway_id: GIVEAWAY_CONFIG.giveaway_id,
+                    giveaway_title: GIVEAWAY_CONFIG.giveaway_title,
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    shared: false,
+                    created_at: new Date().toISOString()
+                };
+
+                // Enable WhatsApp button
+                whatsappBtn.disabled = false;
+                updateStep(2);
+            } else {
+                whatsappBtn.disabled = true;
+                confirmBtn.disabled = true;
+                updateStep(1);
+            }
+
+            // Enable confirm button only after required shares
+            if (isFormValid && shareCount >= REQUIRED_SHARES) {
+                confirmBtn.disabled = false;
+            }
+        }
+
+        // Handle WhatsApp share
+        function handleWhatsAppShare() {
+            if (!formData.name) {
+                alert('Please fill all required fields first!');
+                return;
+            }
+
+            const shareUrl = window.location.href;
+            const shareMessage = `${GIVEAWAY_CONFIG.share_text}\n\n${shareUrl}`;
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareMessage)}`;
+
+            // Open WhatsApp
+            window.open(whatsappUrl, '_blank');
+
+            // Increment share count after a delay (simulate user action)
+            setTimeout(() => {
+                shareCount++;
+                updateShareProgress();
+                
+                if (shareCount >= REQUIRED_SHARES) {
+                    formData.shared = true;
+                    confirmBtn.disabled = false;
+                    updateStep(3);
+                    
+                    // Update button text when all shares completed
+                    whatsappBtn.innerHTML = '✅ All Shares Completed!';
+                    whatsappBtn.style.background = '#28a745';
+                    whatsappBtn.disabled = true;
+                }
+            }, 2000);
+        }
+
+        // Handle confirm entry
+        async function handleConfirmEntry() {
+            if (shareCount < REQUIRED_SHARES) {
+                alert(`Please complete all ${REQUIRED_SHARES} WhatsApp shares first!`);
+                return;
+            }
+
+            // Show loading state
+            confirmBtn.classList.add('loading');
+            confirmBtn.innerHTML = '<span class="spinner"></span> Confirming...';
+            confirmBtn.disabled = true;
+
+            try {
+                // Insert data to Supabase
+                const { data, error } = await supabase.from('giveaway_entries').insert([formData]);
+
+                if (error) {
+                    throw error;
+                }
+
+                // Show success message
+                showSuccessMessage();
+                
+                // Hide form and buttons
+                form.style.display = 'none';
+                whatsappBtn.style.display = 'none';
+                confirmBtn.style.display = 'none';
+                document.getElementById('share-progress').style.display = 'none';
+
+                // Update steps
+                updateStep(3, true);
+
+            } catch (error) {
+                console.error('Error submitting entry:', error);
+                alert('Something went wrong. Please try again!');
+                
+                // Reset button
+                confirmBtn.classList.remove('loading');
+                confirmBtn.innerHTML = '✅ Confirm Entry';
+                confirmBtn.disabled = false;
+            }
+        }
+
+        // Update share progress
+        function updateShareProgress() {
+            const shareCountElement = document.getElementById('share-count');
+            const progressBar = document.getElementById('progress-bar');
+            const remainingShares = document.getElementById('remaining-shares');
+            const shareProgress = document.getElementById('share-progress');
+            
+            // Show progress bar after first share
+            if (shareCount > 0) {
+                shareProgress.style.display = 'block';
+            }
+            
+            // Update counter
+            shareCountElement.textContent = shareCount;
+            
+            // Update progress bar
+            const progressPercentage = (shareCount / REQUIRED_SHARES) * 100;
+            progressBar.style.width = progressPercentage + '%';
+            
+            // Update remaining shares
+            const remaining = REQUIRED_SHARES - shareCount;
+            remainingShares.textContent = remaining;
+            
+            if (remaining === 0) {
+                document.querySelector('#share-progress p').innerHTML = '🎉 All shares completed! You can now confirm your entry.';
+            } else if (remaining === 1) {
+                document.querySelector('#share-progress p').innerHTML = '<span id="remaining-shares">1</span> more share needed';
+            }
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            successMessage.classList.add('show');
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+        }
+
+        // Update step indicator
+        function updateStep(stepNumber, completed = false) {
+            // Reset all steps
+            for (let i = 1; i <= 3; i++) {
+                const step = document.getElementById(`step-${i}`);
+                step.classList.remove('active', 'completed');
+                
+                if (i < stepNumber) {
+                    step.classList.add('completed');
+                } else if (i === stepNumber && !completed) {
+                    step.classList.add('active');
+                } else if (i === stepNumber && completed) {
+                    step.classList.add('completed');
+                }
+            }
+        }
+
+        // Utility function to format phone number
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 10) {
+                value = value.slice(0, 10);
+            }
+            e.target.value = value;
+        });
+
+        // Prevent form submission on Enter key
+        document.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && e.target.tagName === 'INPUT') {
+                e.preventDefault();
+                
+                // Move to next input or trigger WhatsApp share
+                const inputs = Array.from(form.querySelectorAll('input'));
+                const currentIndex = inputs.indexOf(e.target);
+                
+                if (currentIndex < inputs.length - 1) {
+                    inputs[currentIndex + 1].focus();
+                } else if (!whatsappBtn.disabled) {
+                    whatsappBtn.click();
+                }
+            }
+        });
+
+        // Analytics tracking (placeholder)
+        function trackEvent(eventName, eventData) {
+            console.log('Analytics Event:', eventName, eventData);
+            // Integrate with Google Analytics, Facebook Pixel, etc.
+        }
+
+        // Track page load
+        trackEvent('page_view', {
+            giveaway_id: GIVEAWAY_CONFIG.giveaway_id,
+            page_title: document.title
+        });
+
+        // Track form completion
+        form.addEventListener('input', function() {
+            const filledInputs = Array.from(form.querySelectorAll('input')).filter(input => input.value.trim());
+            if (filledInputs.length === 3) {
+                trackEvent('form_completed', {
+                    giveaway_id: GIVEAWAY_CONFIG.giveaway_id
+                });
+            }
+        });
+
+        // Track WhatsApp share
+        whatsappBtn.addEventListener('click', function() {
+            trackEvent('whatsapp_share', {
+                giveaway_id: GIVEAWAY_CONFIG.giveaway_id,
+                user_name: formData.name
+            });
+        });
+
+        // Track entry confirmation
+        confirmBtn.addEventListener('click', function() {
+            trackEvent('entry_confirmed', {
+                giveaway_id: GIVEAWAY_CONFIG.giveaway_id,
+                user_email: formData.email
+            });
+        });
+
+        // Service Worker Registration (for PWA capabilities)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                // Register service worker for offline capabilities
+                console.log('Service Worker support detected');
+            });
+        }
+
+        // Error handling for network issues
+        window.addEventListener('online', function() {
+            console.log('Connection restored');
+        });
+
+        window.addEventListener('offline', function() {
+            console.log('Connection lost');
+            alert('You are offline. Please check your internet connection.');
+        });
+    </script>
+</body>
+</html>

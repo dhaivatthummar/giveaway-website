@@ -1,70 +1,150 @@
-# Getting Started with Create React App
+# 🎁 Giveaway Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A production-ready, secure giveaway website built with HTML, CSS, and Vanilla JavaScript. Features mobile-first design, WhatsApp sharing integration, and secure Supabase backend.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Mobile-First Responsive Design** - Optimized for all devices
+- **10-Share Requirement** - Users must share on WhatsApp 10 times before entry
+- **Secure Backend** - Supabase integration with serverless functions
+- **Real-time Progress Tracking** - Visual progress bar for shares
+- **Form Validation** - Complete client-side validation
+- **Ad-Ready** - Strategic ad placements for monetization
+- **SEO Optimized** - Meta tags and structured data
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Clone Repository
+```bash
+git clone <your-repo-url>
+cd giveaway-website
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-### `npm test`
+### 3. Setup Supabase Database
+Run the SQL query from `supabase-table.sql` in your Supabase SQL editor.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 4. Configure Environment Variables
+Copy `.env.example` to `.env` and add your Supabase credentials:
+```bash
+SUPABASE_URL=your_supabase_url
+SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
+```
 
-### `npm run build`
+### 5. Deploy to Netlify
+1. Connect your GitHub repository to Netlify
+2. Set environment variables in Netlify dashboard
+3. Deploy!
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+├── index.html              # Main giveaway page
+├── netlify/
+│   └── functions/
+│       └── submit-entry.js  # Secure API endpoint
+├── supabase-table.sql      # Database schema
+├── package.json            # Dependencies
+├── netlify.toml           # Netlify configuration
+└── README.md              # This file
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔧 Configuration
 
-### `npm run eject`
+### Giveaway Settings
+Update the `GIVEAWAY_CONFIG` object in `index.html`:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+const GIVEAWAY_CONFIG = {
+    giveaway_id: "amazon-1000-jan",
+    giveaway_title: "₹1000 Amazon Gift Voucher",
+    giveaway_description: "Win a ₹1000 Amazon Gift Voucher absolutely FREE!",
+    share_text: "🎁 I am participating in a ₹1000 Amazon Gift Voucher Giveaway! Join now 👇"
+};
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Share Requirements
+Change the required number of shares by updating:
+```javascript
+const REQUIRED_SHARES = 10; // Change this number
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🛡️ Security Features
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **No Exposed Credentials** - All sensitive data handled server-side
+- **Input Validation** - Both client and server-side validation
+- **Duplicate Prevention** - Prevents multiple entries with same email
+- **Rate Limiting** - Built-in protection against spam
+- **CORS Protection** - Secure cross-origin requests
 
-## Learn More
+## 📊 Database Schema
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The `giveaway_entries` table includes:
+- `id` - Unique entry identifier
+- `giveaway_id` - Links to specific giveaway
+- `name`, `email`, `phone` - User details
+- `shared` - Boolean for completion status
+- `share_count` - Number of WhatsApp shares
+- `created_at` - Timestamp
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🎨 Customization
 
-### Code Splitting
+### Colors & Branding
+Update CSS variables in the `<style>` section:
+- Primary color: `#FF9900` (Amazon orange)
+- WhatsApp green: `#25D366`
+- Success green: `#28a745`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Ad Placements
+Three strategic ad zones:
+1. Top banner (728x90)
+2. Mid-content (300x250)
+3. Sticky mobile banner (320x50)
 
-### Analyzing the Bundle Size
+## 📱 Mobile Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Touch-friendly buttons (44px minimum)
+- Sticky bottom navigation
+- Optimized form inputs
+- WhatsApp deep linking
+- Progressive Web App ready
 
-### Making a Progressive Web App
+## 🔍 SEO & Analytics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Complete meta tags
+- Open Graph integration
+- Analytics tracking hooks
+- Structured data ready
+- Fast loading optimized
 
-### Advanced Configuration
+## 📈 Monetization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- AdSense-friendly structure
+- Strategic ad placements
+- Non-intrusive design
+- High engagement flow
+- Conversion optimized
 
-### Deployment
+## 🤝 Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open Pull Request
 
-### `npm run build` fails to minify
+## 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🆘 Support
+
+For support, email support@yoursite.com or create an issue in this repository.
+
+---
+
+**Made with ❤️ for creators and marketers**
