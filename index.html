@@ -62,11 +62,13 @@
             background: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 8px;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
             margin: 15px 0;
             color: #6c757d;
             font-size: 14px;
+            min-height: 110px;
+            overflow: hidden;
         }
 
         .ad-label {
@@ -146,10 +148,12 @@
             background: #f8f9fa;
             border: 1px solid #e9ecef;
             border-radius: 8px;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             margin: 25px 15px;
             color: #6c757d;
+            min-height: 280px;
+            overflow: hidden;
         }
 
         /* Buttons */
@@ -412,6 +416,28 @@
             }
         }
 
+        /* Mobile Ad Responsiveness */
+        @media (max-width: 767px) {
+            .ad-banner {
+                margin: 10px;
+                padding: 8px;
+            }
+            
+            .ad-mid {
+                margin: 20px 10px;
+                padding: 10px;
+            }
+            
+            /* Hide large ads on very small screens, show mobile-optimized versions */
+            @media (max-width: 480px) {
+                .ad-banner iframe,
+                .ad-mid iframe {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
         /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -440,8 +466,17 @@
         <!-- Top Banner Ad -->
         <div class="ad-banner">
             <div class="ad-label">Advertisement</div>
-            <div style="height: 60px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999;">
-                728x90 Banner Ad Space
+            <div style="text-align: center; padding: 5px;">
+                <script>
+                    atOptions = {
+                        'key' : 'b8893b640d1ccafa34d0fdc81fdf5a2d',
+                        'format' : 'iframe',
+                        'height' : 90,
+                        'width' : 728,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/b8893b640d1ccafa34d0fdc81fdf5a2d/invoke.js"></script>
             </div>
         </div>
 
@@ -491,8 +526,17 @@
         <!-- Mid Content Ad -->
         <div class="ad-mid">
             <div class="ad-label">Sponsored</div>
-            <div style="height: 100px; background: linear-gradient(45deg, #f0f0f0, #e0e0e0); border-radius: 4px; display: flex; align-items: center; justify-content: center; color: #999; margin-top: 10px;">
-                300x250 Rectangle Ad Space
+            <div style="text-align: center; padding: 10px;">
+                <script>
+                    atOptions = {
+                        'key' : 'b796a4d7c9431c3245d22de2c37853cd',
+                        'format' : 'iframe',
+                        'height' : 250,
+                        'width' : 300,
+                        'params' : {}
+                    };
+                </script>
+                <script src="https://www.highperformanceformat.com/b796a4d7c9431c3245d22de2c37853cd/invoke.js"></script>
             </div>
         </div>
 
@@ -561,10 +605,9 @@
             share_text: "🎁 I am participating in a ₹1000 Amazon Gift Voucher Giveaway! Join now 👇"
         };
 
-        // Supabase Configuration (Replace with your actual credentials)
-        const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-
+        // API Configuration - No credentials exposed!
+        const API_BASE_URL = window.location.origin; // Uses same domain
+        
         // Application State
         let formData = {};
         let shareCount = 0;
@@ -576,19 +619,30 @@
         const confirmBtn = document.getElementById('confirm-btn');
         const successMessage = document.getElementById('success-message');
 
-        // Initialize Supabase Client (Mock for demo)
-        const supabase = {
-            from: (table) => ({
-                insert: (data) => {
-                    console.log('Inserting data to Supabase:', data);
-                    // Simulate API call
-                    return new Promise((resolve) => {
-                        setTimeout(() => {
-                            resolve({ data: data, error: null });
-                        }, 1000);
+        // Secure API client for database operations
+        const apiClient = {
+            submitEntry: async (data) => {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/.netlify/functions/submit-entry`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
                     });
+
+                    const result = await response.json();
+                    
+                    if (!response.ok) {
+                        throw new Error(result.error || 'API request failed');
+                    }
+                    
+                    return { data: result, error: null };
+                } catch (error) {
+                    console.error('API Error:', error);
+                    return { data: null, error: error.message };
                 }
-            })
+            }
         };
 
         // Initialize the application
@@ -710,11 +764,16 @@
             confirmBtn.disabled = true;
 
             try {
-                // Insert data to Supabase
-                const { data, error } = await supabase.from('giveaway_entries').insert([formData]);
+                // Submit entry via secure API
+                const entryData = {
+                    ...formData,
+                    share_count: shareCount
+                };
+                
+                const { data, error } = await apiClient.submitEntry(entryData);
 
                 if (error) {
-                    throw error;
+                    throw new Error(error);
                 }
 
                 // Show success message
@@ -731,7 +790,16 @@
 
             } catch (error) {
                 console.error('Error submitting entry:', error);
-                alert('Something went wrong. Please try again!');
+                
+                // Show user-friendly error message
+                let errorMessage = 'Something went wrong. Please try again!';
+                if (error.message.includes('already registered')) {
+                    errorMessage = 'This email is already registered for this giveaway!';
+                } else if (error.message.includes('Invalid')) {
+                    errorMessage = 'Please check your details and try again.';
+                }
+                
+                alert(errorMessage);
                 
                 // Reset button
                 confirmBtn.classList.remove('loading');
